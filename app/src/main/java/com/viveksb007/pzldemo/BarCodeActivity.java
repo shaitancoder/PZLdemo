@@ -33,7 +33,6 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import com.viveksb007.pzldemo.ui.CameraSource;
-import com.viveksb007.pzldemo.ui.CameraSource;
 import com.viveksb007.pzldemo.ui.CameraSourcePreview;
 import com.viveksb007.pzldemo.ui.GraphicOverlay;
 

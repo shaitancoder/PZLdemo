@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        if (savedInstanceState != null) {
-            Toast.makeText(MainActivity.this, "Some Data is Coming", Toast.LENGTH_SHORT).show();
-        }
         btnScanCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
