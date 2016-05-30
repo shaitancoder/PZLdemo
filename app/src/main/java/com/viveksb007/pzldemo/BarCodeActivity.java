@@ -1,6 +1,5 @@
 package com.viveksb007.pzldemo;
 
-import android.*;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -25,6 +24,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.flurry.android.FlurryAgent;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
@@ -119,6 +119,18 @@ public class BarCodeActivity extends Activity {
                 .show();
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.onStartSession(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.onEndSession(this);
     }
 
     /**
