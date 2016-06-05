@@ -9,12 +9,12 @@
         android:id="@+id/imgView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="70"/>
+        android:layout_weight="60"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="30">
+        android:layout_weight="40">
 
         <com.viveksb007.pzldemo.ui.CameraSourcePreview
             android:id="@+id/preview"
