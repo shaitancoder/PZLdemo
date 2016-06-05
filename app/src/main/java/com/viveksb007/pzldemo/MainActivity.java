@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "BarcodeMain";
 
     @BindView(R.id.btnScanBarCode)
-    Button btnScanCode;
+    Button mBtnScanCode;
     @BindView(R.id.tvBarCodeResult)
-    TextView tvBarCodeResult;
+    TextView mTvBarCodeResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        btnScanCode.setOnClickListener(new View.OnClickListener() {
+        mBtnScanCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, BarCodeActivity.class);
@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {
                     Barcode barcode = data.getParcelableExtra(BarCodeActivity.BarcodeObject);
-                    tvBarCodeResult.setText(barcode.displayValue);
+                    mTvBarCodeResult.setText(barcode.displayValue);
                     Log.d(TAG,"Barcode value: "+barcode.displayValue);
                 } else {
-                    tvBarCodeResult.setText(R.string.barcode_failure);
+                    mTvBarCodeResult.setText(R.string.barcode_failure);
                 }
             } else {
-                tvBarCodeResult.setText(R.string.barcode_error);
+                mTvBarCodeResult.setText(R.string.barcode_error);
             }
 
         } else {

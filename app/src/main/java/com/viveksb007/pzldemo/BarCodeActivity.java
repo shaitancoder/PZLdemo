@@ -49,8 +49,7 @@ import butterknife.ButterKnife;
  */
 public class BarCodeActivity extends Activity {
 
-    @BindView(R.id.imgView) ImageView imgView;
-    String imgaddress = "http://i.imgur.com/gBkHzPN.png";
+    @BindView(R.id.imgView) ImageView mImgView;
     private static final String TAG = "Barcode-reader";
 
     // intent request code to handle updating play services if needed.
@@ -79,8 +78,9 @@ public class BarCodeActivity extends Activity {
         ButterKnife.bind(this);
 
         //////  IMAGE LOADING WITH PICASSO  //////
+        String imgAddress = "http://i.imgur.com/gBkHzPN.png";
 
-        Picasso.with(this).load(imgaddress).into(imgView, new Callback() {
+        Picasso.with(this).load(imgAddress).fit().into(mImgView, new Callback() {
             @Override
             public void onSuccess() {
                 Toast.makeText(BarCodeActivity.this, "Successfully Loaded", Toast.LENGTH_SHORT).show();
